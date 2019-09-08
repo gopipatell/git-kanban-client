@@ -5,7 +5,7 @@ import './KanbanBoard.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import KanbanList from './KanbanList.js'
 
-const SERVER_URL = serverURL('repositories/3');
+const SERVER_URL = serverURL('repositories/5');
 
 
 class KanbanBoard extends Component {
@@ -15,18 +15,17 @@ class KanbanBoard extends Component {
       repository : {tasks:[]}
     };
 
-    const fetchUsers = () => {
-      axios.get(SERVER_URL).then((result) => {
-        this.setState({repository: result.data.repository});
-      });
-    };
-    fetchUsers();
-
     this._handleTaskSave = this._handleTaskSave.bind(this);
   }
 
+  componentDidMount() {
+    axios.get(SERVER_URL).then((result) => {
+      this.setState({repository: result.data.repository});
+    });
+  }
+
   _handleTaskSave(task) {
-    const payload = { task: { ...task, repository_id: 3 }};
+    const payload = { task: { ...task, repository_id: 5 }};
 
     axios.post(serverURL("tasks"), payload)
       .then(result => {
@@ -45,7 +44,7 @@ class KanbanBoard extends Component {
         { columns.map( (column, index) => {
             const status = ""+(index+1);
             return (
-              <Col className="p-0">
+              <Col className="p-0" key={status}>
                 <KanbanList title={column} tasks={this.state.repository.tasks.filter(t => t.status === status)} handleTaskSave={ task => this._handleTaskSave({...task, status: status}) } />
               </Col>
             )

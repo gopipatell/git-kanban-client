@@ -4,29 +4,28 @@ import serverURL from "../ServerURL";
 
 
 
-const SERVER_URL = serverURL('users/21');
+const SERVER_URL = serverURL('repositories');
 
 class Dashboard extends Component {
   constructor() {
     super();
     this.state = {
-      user : {repositories:[]}
+      repositories: []
     };
-
-    const fetchUsers = () => {
-      axios.get(SERVER_URL).then((result) => {
-        this.setState({user: result.data.user});
-      });
-    };
-    fetchUsers();
-
   };
+
+  componentDidMount() {
+    axios.get(SERVER_URL).then((result) => {
+      this.setState({repositories: result.data});
+    });
+  }
+
   render() {
     return (
       <div>
         <h1> Dashboard </h1>
 
-        {this.state.user.repositories.map(user => {
+        {this.state.repositories.map(user => {
           return (
             <p>{user.name}</p>
           )

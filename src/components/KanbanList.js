@@ -26,7 +26,7 @@ class KanbanList extends Component {
   render() {
     return (
       <div className="list">
-        <div class="text-center">{this.props.title}</div>
+        <div className="text-center">{this.props.title}</div>
 
         {this.props.tasks.map(task => {
           return(
