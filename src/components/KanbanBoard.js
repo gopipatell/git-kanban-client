@@ -5,27 +5,28 @@ import './KanbanBoard.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import KanbanList from './KanbanList.js'
 
-const SERVER_URL = serverURL('repositories/5');
-
-
 class KanbanBoard extends Component {
   constructor() {
     super();
     this.state= {
-      repository : {tasks:[]}
+      repository : {name:"", tasks:[]}
     };
 
     this._handleTaskSave = this._handleTaskSave.bind(this);
   }
 
   componentDidMount() {
-    axios.get(SERVER_URL).then((result) => {
+
+    const {id} = this.props.match.params;
+
+    axios.get(serverURL(`repositories/${id}`)).then((result) => {
       this.setState({repository: result.data.repository});
     });
   }
 
   _handleTaskSave(task) {
-    const payload = { task: { ...task, repository_id: 5 }};
+    const {id} = this.props.match.params;
+    const payload = { task: { ...task, repository_id: id }};
 
     axios.post(serverURL("tasks"), payload)
       .then(result => {
@@ -38,7 +39,7 @@ class KanbanBoard extends Component {
 
     return (
       <div className="container-fluid mt-2">
-      <h4 className="text-capitalize">{this.state.repository.name}</h4>
+      <h4 className="text-capitalize">{this.state.repository.name.replace(/[-]/g,' ')}</h4>
 
       <Row>
         { columns.map( (column, index) => {
