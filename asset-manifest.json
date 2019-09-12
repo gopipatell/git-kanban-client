@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/git-kanban-client/static/css/main.5ca73d4e.chunk.css",
-    "main.js": "/git-kanban-client/static/js/main.3b1c2fab.chunk.js",
-    "main.js.map": "/git-kanban-client/static/js/main.3b1c2fab.chunk.js.map",
+    "main.js": "/git-kanban-client/static/js/main.1e1261a8.chunk.js",
+    "main.js.map": "/git-kanban-client/static/js/main.1e1261a8.chunk.js.map",
     "runtime~main.js": "/git-kanban-client/static/js/runtime~main.69ba39c2.js",
     "runtime~main.js.map": "/git-kanban-client/static/js/runtime~main.69ba39c2.js.map",
     "static/css/2.9798096d.chunk.css": "/git-kanban-client/static/css/2.9798096d.chunk.css",
     "static/js/2.6a339ba5.chunk.js": "/git-kanban-client/static/js/2.6a339ba5.chunk.js",
     "static/js/2.6a339ba5.chunk.js.map": "/git-kanban-client/static/js/2.6a339ba5.chunk.js.map",
     "index.html": "/git-kanban-client/index.html",
-    "precache-manifest.c66d6271d7406f0139b477156c977093.js": "/git-kanban-client/precache-manifest.c66d6271d7406f0139b477156c977093.js",
+    "precache-manifest.d80bcdbe813c7a2dd72d1d412149b87f.js": "/git-kanban-client/precache-manifest.d80bcdbe813c7a2dd72d1d412149b87f.js",
     "service-worker.js": "/git-kanban-client/service-worker.js",
     "static/css/2.9798096d.chunk.css.map": "/git-kanban-client/static/css/2.9798096d.chunk.css.map",
     "static/css/main.5ca73d4e.chunk.css.map": "/git-kanban-client/static/css/main.5ca73d4e.chunk.css.map",
