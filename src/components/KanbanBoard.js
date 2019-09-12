@@ -5,6 +5,8 @@ import './KanbanBoard.css'
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import KanbanList from './KanbanList.js'
 import { DragDropContext } from 'react-beautiful-dnd';
+import './KanbanList.css'
+import theme from '../ThemeUtil'
 
 class KanbanBoard extends Component {
   constructor() {
@@ -15,13 +17,18 @@ class KanbanBoard extends Component {
 
     this._handleTaskSave = this._handleTaskSave.bind(this);
     this._handleDragEnd = this._handleDragEnd.bind(this);
+    this._handleDelete = this._handleDelete.bind(this);
+
   }
 
   componentDidMount() {
 
+    theme.randomTheme();
+
     const {id} = this.props.match.params;
 
     axios.get(serverURL(`repositories/${id}`)).then((result) => {
+
       this.setState({repository: result.data.repository});
     });
   }
@@ -35,6 +42,19 @@ class KanbanBoard extends Component {
         this.setState({repository: { ...this.state.repository, tasks: [ ...this.state.repository.tasks, result.data ] }})
       });
   }
+
+
+  _handleDelete(taskId, e) {
+    e.preventDefault();
+
+    axios.delete(serverURL(`tasks/${taskId}`))
+      .then(result => {
+        const tasks = this.state.repository.tasks.filter(t => t.id !== taskId)
+        this.setState({repository: { ...this.state.repository, tasks: [ ...tasks ] }})
+      });
+
+  }
+
 
   _handleDragEnd(result) {
     console.log(result);
@@ -58,11 +78,20 @@ class KanbanBoard extends Component {
   }
 
   render() {
-    const columns = ["Backlog", "Ready to start", "In progress", "Done"];
+
+    const columns = ["Backlog", "Ready to start", "In progress", "Review", "Done"];
 
     return (
       <div className="container-fluid mt-2 kanban-board">
-      <h4 className="text-capitalize">{this.state.repository.name.replace(/[-]/g,' ')}</h4>
+      <Row>
+      <Col>
+        <h4 className="text-capitalize"> {this.state.repository.name.replace(/[-]/g,' ')}</h4>
+      </Col>
+      <Col className="text-right">
+
+      </Col>
+      </Row>
+
       <p>{this.state.repository.description}</p>
       <Row>
       <DragDropContext onDragEnd={this._handleDragEnd}>
@@ -73,6 +102,7 @@ class KanbanBoard extends Component {
                 <KanbanList
                   title={column}
                   tasks={this.state.repository.tasks.filter(t => t.status === status).sort((a,b)=>a.task_index-b.task_index)}
+                  handleDelete={ this._handleDelete }
                   handleTaskSave={ task => this._handleTaskSave({...task, status: status}) }
                   status={status}/>
               </Col>

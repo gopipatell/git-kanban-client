@@ -19,10 +19,6 @@ const Routes = (
             </Switch>
 
         </main>
-
-        <footer className="text-muted">
-          Copyright &copy; Git Kanban
-        </footer>
       </>
   </Router>
 )

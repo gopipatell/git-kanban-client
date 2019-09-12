@@ -1,8 +1,12 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, NavDropdown } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import LoginButton from './LoginButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import './Layout.css'
+
 import axios from 'axios';
 
 class Header extends React.Component {
@@ -56,12 +60,17 @@ class Header extends React.Component {
   render() {
     return(
         <header>
-          <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Git Kanban</Navbar.Brand>
+          <Navbar className="navbar-color" variant="dark">
+            <Navbar.Brand href="#">
+            <FontAwesomeIcon className="mr-2" icon={['fab', 'trello']} />
+              Git Kanban
+            </Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="#/dashboard">Home</Nav.Link>
-              <Nav.Link href="#/repositories/7">Kanban Board</Nav.Link>
-              <Nav.Link href="#pricing">coming soon</Nav.Link>
+            {this.state.user.name ?
+
+              <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
+              
+                : ''}
             </Nav>
             <Navbar.Collapse className="justify-content-end">
                   {this.state.user.name ?

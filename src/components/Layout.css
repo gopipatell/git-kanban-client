@@ -1,8 +1,14 @@
 .main-content {
-  background-color: white;
   height: calc(100vh - 90px);
 }
 
 footer {
   text-align: center;
+}
+
+.navbar-color {
+  background-color: #00000099;
+}
+.navbar-name {
+  color: white;
 }

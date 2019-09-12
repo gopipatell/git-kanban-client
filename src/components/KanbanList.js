@@ -14,6 +14,7 @@ class KanbanList extends Component {
 
     this._handleModalClose =  this._handleModalClose.bind(this);
     this._handleShowModal = this._handleShowModal.bind(this);
+
   }
 
   _handleModalClose = function() {
@@ -37,17 +38,17 @@ class KanbanList extends Component {
               return(
                 <Draggable draggableId={task.id+""} index={task.task_index} key={task.id}>
                 {providedDrag => (
-                  <Card className="mt-1 shadow-sm"
+                  <Card className="mt-1 p-0 shadow-sm text-dark kanban-card"
                     key={task.id}
                     ref={providedDrag.innerRef}
                     {...providedDrag.dragHandleProps}
                     {...providedDrag.draggableProps}>
                     <Card.Body>
-                      <Card.Text className="mb-0 text-capitalize">{task.title}</Card.Text>
+                      <Card.Text className="mb-0 text-capitalize" style={{color: 'black'}}>{task.title}</Card.Text>
                       <Card.Text className="small">
                         {task.description}
                       </Card.Text>
-                      <Card.Link className="small text-secondary" href="#">Delete</Card.Link>
+                      <Card.Link className="small kanban-card-link text-secondary" href="#" onClick={e => this.props.handleDelete(task.id, e)}>Delete</Card.Link>
                     </Card.Body>
                   </Card>
                 )}
@@ -59,7 +60,7 @@ class KanbanList extends Component {
         )}
         </Droppable>
         <br/>
-        <Button
+        <Button className="addbutton"
           variant="light text-muted"
           size="sm" block
           onClick={this._handleShowModal}>

@@ -1,0 +1,7 @@
+.kanban-card-link {
+  visibility: hidden;
+}
+
+.kanban-card:hover .kanban-card-link {
+  visibility: visible;
+}

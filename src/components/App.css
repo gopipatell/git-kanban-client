@@ -1,0 +1,89 @@
+.container {
+  max-width: 960px;
+}
+
+/*
+ * Custom translucent site header
+ */
+
+.site-header {
+  background-color: rgba(0, 0, 0, .85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #999;
+  transition: ease-in-out color .15s;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ * Dummy devices (replace them with your own or something else entirely!)
+ */
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #949ec1;
+  border-radius: 21px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  /* image: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1118167163%2F960x0.jpg%3Ffit%3Dscale" */
+  content: "";
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+}
+
+.product-device {
+  background-image: url(https://image.slidesharecdn.com/git-workshop-140301061815-phpapp01/95/collaborative-development-with-git-workshop-24-638.jpg?cb=1393654816);
+  border: 1px soild red;
+}
+
+.product-device-2 {
+  top: -20%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #949ec1;
+  background-image:url(kanban.jpg);
+}
+
+.homepage{
+  /* background-image: url("https://media2.giphy.com/media/l4KihuqeuJEi9qLSM/giphy.gif"); */
+}
+  .font-weight-normal {
+    color: black;
+    font-weight: 700;
+  }
+
+
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+  -ms-flex: 1;
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+.overflow-hidden { overflow: hidden; }

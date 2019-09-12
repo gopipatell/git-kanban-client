@@ -5,9 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+background-image: linear-gradient(to bottom right, #b5cbd4, #92b0bb);
+
+  /* background-image: linear-gradient(to bottom right, #a6e4e4, #a25192); */
+
+    /* background-image: linear-gradient(to bottom right, #cab5ae, #7b9c8b); */
+
+    /* background-image: linear-gradient(to bottom right, #a8f79e, #596494); */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.navbar-dark .navbar-text, .navbar-dark .navbar-link {
+  color: white;
 }

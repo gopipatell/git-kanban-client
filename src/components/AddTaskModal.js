@@ -42,7 +42,7 @@ class AddTaskModal extends Component {
             <Button variant="light" size="sm" onClick={this.props.handleClose}>
               Close
             </Button>
-            <Button variant="primary" size="sm" onClick={() => { this.props.handleClose(); this.props.handleTaskSave(this.state.task);} }>
+            <Button variant="dark" size="sm" onClick={() => { this.props.handleClose(); this.props.handleTaskSave(this.state.task);} }>
               Add New Task
             </Button>
           </Modal.Footer>

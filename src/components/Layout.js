@@ -11,7 +11,7 @@ class Layout extends Component {
       <React.Fragment>
 
         <header>
-          <Navbar bg="dark" variant="dark">
+          <Navbar className="navebar" bg="dark" variant="dark">
             <Navbar.Brand href="#home">Git Kanban</Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link href="#home">Home</Nav.Link>

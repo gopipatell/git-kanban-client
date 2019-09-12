@@ -10,7 +10,7 @@ const scope = '';
 
 function LoginButton() {
   return (
-    <a className="btn btn-primary" href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`}>
+    <a className="btn btn-dark all-buttons" href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`}>
       <FontAwesomeIcon className="mr-2" icon={['fab', 'github']} />
       Login with Github
     </a>
