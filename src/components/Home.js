@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import theme from '../ThemeUtil';
 
 function Home() {
+  theme.resetTheme();
+
   return (
-    theme.resetTheme();
 
     <div >
         <div class="position-relative overflow-hidden p-3 p-md-5 text-center homepage">
