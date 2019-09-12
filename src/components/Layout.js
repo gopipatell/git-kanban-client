@@ -3,7 +3,6 @@ import KanbanBoard from './KanbanBoard';
 import './Layout.css'
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 
 class Layout extends Component {
   render () {

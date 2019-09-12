@@ -2,10 +2,12 @@ import React from 'react';
 import LoginButton from './LoginButton';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import theme from '../ThemeUtil';
 
 function Home() {
   return (
+    theme.resetTheme();
+
     <div >
         <div class="position-relative overflow-hidden p-3 p-md-5 text-center homepage">
           <div class="col-md-5 p-lg-5 mx-auto my-5">
@@ -13,7 +15,7 @@ function Home() {
             <FontAwesomeIcon className="mr-3 text-dark" icon={['fab', 'trello']} />
               Git Kanban
             </h1>
-            <p class="lead font-weight-normal">When Open Source Meets Kanban 🧡</p>
+            <p class="lead font-weight-normal">When Open Source Meets Kanban <span role="img" aria-label="heart">🧡</span></p>
             <p class="text-capitalize">
             Manage your projects feature backlog efficiently. Sync repositories from Github and Start managing Kanban board with one click.</p>
             <LoginButton/>
@@ -30,7 +32,7 @@ function Home() {
                   <h2 class="display-5">Sync Github Projects</h2>
                 </div>
                 <div class="bg-light p-3 box-shadow mx-auto">
-                  <img src="https://i.pinimg.com/originals/dc/ef/3a/dcef3abedf0e0761203aaeb85886a6f3.jpg" width="200" height="200"/>
+                  <img src="https://i.pinimg.com/originals/dc/ef/3a/dcef3abedf0e0761203aaeb85886a6f3.jpg" alt="sync" width="200" height="200"/>
                 </div>
               </div>
               <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -38,7 +40,7 @@ function Home() {
                   <h2 class="display-5">Track your backlog</h2>
                 </div>
                 <div class="bg-dark box-shadow mx-auto mb-4">
-                <img src="https://cdn2.iconfinder.com/data/icons/online-gaming/512/online_gaming_progress-512.png" height="250" />
+                <img src="https://cdn2.iconfinder.com/data/icons/online-gaming/512/online_gaming_progress-512.png" height="250" alt="backlog" />
                 </div>
               </div>
             </div>
@@ -49,7 +51,7 @@ function Home() {
                   <h2 class="display-5">Get things done</h2>
                 </div>
                 <div class="bg-dark box-shadow mx-auto p-4">
-                  <img src="https://www.androidpolice.com/wp-content/cache/wp-appbox/a32f0c784daf6ebdee8d1d2aa88cf1b5/ai-ad558b8d3a18effc498879622379f140" width="200"/>
+                  <img src="https://www.androidpolice.com/wp-content/cache/wp-appbox/a32f0c784daf6ebdee8d1d2aa88cf1b5/ai-ad558b8d3a18effc498879622379f140" alt="things done" width="200"/>
                 </div>
               </div>
               <div class="bg-secondary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
@@ -57,7 +59,7 @@ function Home() {
                   <h2 class="display-5">Collaborate with team</h2>
                 </div>
                 <div class="bg-light box-shadow mx-auto p-4">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZBb1olXBUg3ALXOQWESZrNT3OWbMujCX_-EnEkvSLm1BoQdMJiQ" height="180" />
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZBb1olXBUg3ALXOQWESZrNT3OWbMujCX_-EnEkvSLm1BoQdMJiQ" height="180" alt="team" />
                 </div>
               </div>
             </div>

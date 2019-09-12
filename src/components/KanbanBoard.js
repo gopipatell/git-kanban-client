@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 import axios from 'axios';
 import serverURL from "../ServerURL";
 import './KanbanBoard.css'
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import KanbanList from './KanbanList.js'
 import { DragDropContext } from 'react-beautiful-dnd';
 import './KanbanList.css'

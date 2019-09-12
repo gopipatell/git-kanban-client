@@ -1,7 +1,6 @@
 import React from 'react'
 import { Nav } from 'react-bootstrap';
-import { Navbar, NavDropdown } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import LoginButton from './LoginButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -54,7 +53,7 @@ class Header extends React.Component {
     e.preventDefault();
     localStorage.removeItem("jwt");
     axios.defaults.headers.common['Authorization'] = null;
-    window.location.href = "/";
+    window.location.href = "/git-kanban-client/";
   }
 
   render() {
@@ -69,14 +68,14 @@ class Header extends React.Component {
             {this.state.user.name ?
 
               <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
-              
+
                 : ''}
             </Nav>
             <Navbar.Collapse className="justify-content-end">
                   {this.state.user.name ?
                     <Nav>
                       <Navbar.Text className="mr-2">
-                        <img src={this.state.user.image} width="30" height="30" className="rounded-circle mr-2"/>
+                        <img src={this.state.user.image} width="30" height="30" alt="avatar" className="rounded-circle mr-2"/>
                         {this.state.user.name}
                       </Navbar.Text>
                       <Nav.Link href="#" onClick={ this._handleLogout }>Logout</Nav.Link>

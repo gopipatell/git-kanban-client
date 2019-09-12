@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
-import { CardImg, CardDeck,CardSubtitle, CardBody,Container } from 'reactstrap';
+import {  Container, Row, Col } from 'reactstrap';
 import './Dashboard.css';
 import serverURL from "../ServerURL";
 import {Link} from 'react-router-dom';

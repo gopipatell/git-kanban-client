@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Card, Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal, Form } from 'react-bootstrap';
 
 
 class AddTaskModal extends Component {
