@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Git Kanban</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const jwt = new URLSearchParams(location.search).get("token");
+      window.localStorage['jwt'] = jwt;
+      window.location.href = "/#/dashboard";
+    </script>
+  </body>
+</html>
